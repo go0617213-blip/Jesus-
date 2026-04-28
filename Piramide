@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+input, button {
+    margin: 10px;
+    padding: 8px;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Serie de Fibonacci</h2>
+<input type="number" id="num" placeholder="Cantidad de términos">
+<br>
+<button onclick="fibonacci()">Generar</button>
+
+<h2>Pirámide de números</h2>
+<input type="number" id="filas" placeholder="Número de filas">
+<br>
+<button onclick="piramide()">Crear</button>
+
+<div id="resultado"></div>
+
+<script>
+function fibonacci() {
+    let n = document.getElementById("num").value;
+    let a = 0, b = 1;
+    let resultado = "";
+
+    for (let i = 0; i < n; i++) {
+        resultado += a + "<br>";
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+
+    document.getElementById("resultado").innerHTML = resultado;
+}
+
+function piramide() {
+    let filas = document.getElementById("filas").value;
+    let resultado = "";
+
+    for (let i = 1; i <= filas; i++) {
+        for (let j = 1; j <= i; j++) {
+            resultado += j + " ";
+        }
+        resultado += "<br>";
+    }
+
+    document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
+
+</body>
+</html>
