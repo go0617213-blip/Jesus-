@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+}
+button {
+    margin-top: 10px;
+    padding: 8px;
+}
+</style>
+</head>
+<body>
+
+<h2>Serie de Fibonacci</h2>
+
+<input type="number" id="num" placeholder="Cantidad de términos">
+<br>
+<button onclick="fibonacci()">Generar</button>
+
+<div id="resultado"></div>
+
+<script>
+function fibonacci() {
+    let n = document.getElementById("num").value;
+    let a = 0, b = 1;
+    let resultado = "";
+
+    for (let i = 0; i < n; i++) {
+        resultado += a + "<br>";
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+
+    document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
+
+</body>
+</html>
